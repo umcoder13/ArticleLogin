@@ -28,7 +28,9 @@ class ArticleRepositoryTest {
         article.setNickname("realA");
         article.setTitle("Hello");
 
-        Article findArticle = repository.saveAndFlush(article);
+        repository.saveAndFlush(article);
+
+        Article findArticle = repository.findByTitle(article.getTitle());
 
         assertEquals(findArticle.getId(), article.getId());
         assertEquals(findArticle.getUserid(), article.getUserid());
