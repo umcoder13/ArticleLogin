@@ -7,8 +7,6 @@ import javax.validation.constraints.NotEmpty;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Getter
 @Data
 @Entity
 public class Member {

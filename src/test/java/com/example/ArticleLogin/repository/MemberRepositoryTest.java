@@ -22,13 +22,9 @@ class MemberRepositoryTest {
     @Transactional
     @Rollback(false)
     public void testMember() {
-        Member member = new Member();
-        member.setUserid("aaaa");
-        member.setPassword("0000");
-        member.setUsername("김에이");
-        member.setNickname("에이");
-        member.setEmail("aaa@aaa.com");
-        member.setRole(UserRole.USER);
+        Member member = new Member(
+                null, "aaa", "0000", "김에이", "에이", "aaa@aaa.com", UserRole.USER
+        );
 
         repository.save(member);
 

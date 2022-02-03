@@ -22,11 +22,9 @@ class ArticleRepositoryTest {
     @Transactional
     @Rollback(false)
     public void testArticle() {
-        Article article = new Article();
-        article.setUserid("aaa");
-        article.setContent("hi");
-        article.setNickname("realA");
-        article.setTitle("Hello");
+        Article article = new Article(
+                null, "aaa","hi", "realA", "Hello", null
+        );
 
         repository.saveAndFlush(article);
 
