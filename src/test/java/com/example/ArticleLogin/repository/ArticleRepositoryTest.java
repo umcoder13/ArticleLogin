@@ -1,5 +1,6 @@
 package com.example.ArticleLogin.repository;
 
+import com.example.ArticleLogin.dto.ArticleDto;
 import com.example.ArticleLogin.entity.Article;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,9 +23,10 @@ class ArticleRepositoryTest {
     @Transactional
     @Rollback(false)
     public void testArticle() {
-        Article article = new Article(
-                null, "aaa","hi", "realA", "Hello", null
+        ArticleDto dto = new ArticleDto(
+                "title", "id", "nickname", "content"
         );
+        Article article = dto.toEntity();
 
         repository.saveAndFlush(article);
 

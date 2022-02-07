@@ -1,6 +1,7 @@
 package com.example.ArticleLogin.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 @Entity @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Article {
@@ -35,12 +37,14 @@ public class Article {
     private String content;
 
     @Column(nullable = true, updatable = false)
-    @CreatedDate
+    //@CreatedDate
     private LocalDateTime time;
 
+    /*
     @PrePersist
     public void time() {
         this.time = LocalDateTime.now();
     }
+     */
 
 }
